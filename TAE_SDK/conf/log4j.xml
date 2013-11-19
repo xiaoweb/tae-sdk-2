@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE log4j:configuration SYSTEM "D:\workspace\taobao\tae\tae-sdk\sdk-deploy\src\main\dist\conf\log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+    <appender name="RootAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="${DCSDK_HOME}/logs/root.log"/>
+        <param name="append" value="true"/>
+        <param name="datePattern" value="'.'yyyy-MM-dd"/>
+        <param name="encoding" value="GBK"/>
+        <param name="threshold" value="error"/>
+        <param name="bufferedIO" value="false"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{HH:mm:ss} %C{1}#%M [%p]: %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="MainAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="${DCSDK_HOME}/logs/sdk.log"/>
+        <param name="append" value="true"/>
+        <param name="datePattern" value="'.'yyyy-MM-dd"/>
+        <param name="encoding" value="GBK"/>
+        <param name="threshold" value="error"/>
+        <param name="bufferedIO" value="false"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{HH:mm:ss} %C{1}#%M [%p]: %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="ModelAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="${DCSDK_HOME}/logs/sdk-model.log"/>
+        <param name="datePattern" value="'.'yyyy-MM-dd"/>
+        <param name="encoding" value="GBK"/>
+        <param name="threshold" value="error"/>
+        <param name="bufferedIO" value="false"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{HH:mm:ss} %C{1}#%M [%p]: %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="ServiceAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="${DCSDK_HOME}/logs/sdk-service.log"/>
+        <param name="datePattern" value="'.'yyyy-MM-dd"/>
+        <param name="encoding" value="GBK"/>
+        <param name="threshold" value="error"/>
+        <param name="bufferedIO" value="false"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{HH:mm:ss} %C{1}#%M [%p]: %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="WebAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="${DCSDK_HOME}/logs/sdk-webconsole.log"/>
+        <param name="datePattern" value="'.'yyyy-MM-dd"/>
+        <param name="encoding" value="GBK"/>
+        <param name="threshold" value="error"/>
+        <param name="bufferedIO" value="false"/>
+        <param name="bufferSize" value="8192"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{HH:mm:ss} %C{1}#%M [%p]: %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="PlatformAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="${DCSDK_HOME}/logs/sdk-platform.log"/>
+        <param name="datePattern" value="'.'yyyy-MM-dd"/>
+        <param name="encoding" value="GBK"/>
+        <param name="threshold" value="error"/>
+        <param name="bufferedIO" value="false"/>
+        <param name="bufferSize" value="8192"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{HH:mm:ss} [%p]: %m%n"/>
+        </layout>
+    </appender>
+
+
+    <appender name="AgentAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="${DCSDK_HOME}/logs/sdk-agent.log"/>
+        <param name="datePattern" value="'.'yyyy-MM-dd"/>
+        <param name="encoding" value="GBK"/>
+        <param name="threshold" value="info"/>
+        <param name="bufferedIO" value="false"/>
+        <param name="bufferSize" value="8192"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{HH:mm:ss} [%p]: %m%n"/>
+        </layout>
+    </appender>
+
+
+    <appender name="ResourcesErrorAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="${DCSDK_HOME}/logs/resources-error.log"/>
+        <param name="datePattern" value="'.'yyyy-MM-dd"/>
+        <param name="encoding" value="GBK"/>
+        <param name="threshold" value="error"/>
+        <param name="bufferedIO" value="false"/>
+        <param name="bufferSize" value="8192"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{HH:mm:ss} [%p]: %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="StaticResourceErrorAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="${DCSDK_HOME}/logs/static-resource-error.log"/>
+        <param name="datePattern" value="'.'yyyy-MM-dd"/>
+        <param name="encoding" value="GBK"/>
+        <param name="threshold" value="warn"/>
+        <param name="bufferedIO" value="false"/>
+        <param name="bufferSize" value="8192"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{HH:mm:ss} [%p]: %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="AppLoadedClassesInfoAppender" class="org.apache.log4j.RollingFileAppender">
+        <param name="file" value="${DCSDK_HOME}/logs/app-loaded-classes.log"/>
+        <param name="append" value="false"/>
+        <param name="maxBackupIndex" value="1024"/>
+        <param name="encoding" value="GBK"/>
+        <param name="threshold" value="info"/>
+        <param name="bufferedIO" value="false"/>
+        <param name="bufferSize" value="8192"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{HH:mm:ss} %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="BootstrapLoadedClassesInfoAppender" class="org.apache.log4j.RollingFileAppender">
+        <param name="file" value="${DCSDK_HOME}/logs/bootstrap-loaded-classes.log"/>
+        <param name="append" value="false"/>
+        <param name="maxBackupIndex" value="1024"/>
+        <param name="encoding" value="GBK"/>
+        <param name="threshold" value="info"/>
+        <param name="bufferedIO" value="false"/>
+        <param name="bufferSize" value="8192"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{HH:mm:ss} %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="ApiAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="${DCSDK_HOME}/logs/tae-sdk-api.log"/>
+        <param name="append" value="true"/>
+        <param name="datePattern" value="'.'yyyy-MM-dd"/>
+        <param name="encoding" value="GBK"/>
+        <param name="threshold" value="error"/>
+        <param name="bufferedIO" value="false"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{HH:mm:ss} %C{1}#%M [%p]: %m%n"/>
+        </layout>
+    </appender>
+
+    <!-- Logger的配置 -->
+
+    <logger name="RESOURCES_ERROR_LOGGER">
+        <level value="error"/>
+        <appender-ref ref="ResourcesErrorAppender"/>
+    </logger>
+
+    <logger name="APP_LOADED_CLASSES_INFO_LOGGER">
+        <level value="info"/>
+        <appender-ref ref="AppLoadedClassesInfoAppender"/>
+    </logger>
+
+    <logger name="BOOTSTRAP_LOADED_CLASSES_INFO_LOGGER">
+        <level value="info"/>
+        <appender-ref ref="BootstrapLoadedClassesInfoAppender"/>
+    </logger>
+
+    <logger name="com.taobao.tae.sdk.web.servlet.ImageFileServletFilter">
+        <level value="warn"/>
+        <appender-ref ref="StaticResourceErrorAppender"/>
+    </logger>
+
+    <logger name="com.taobao.tae.sdk" additivity="false">
+        <level value="error"/>
+        <appender-ref ref="MainAppender"/>
+    </logger>
+
+    <logger name="com.taobao.tae.sdk.model" additivity="false">
+        <level value="error"/>
+        <appender-ref ref="ModelAppender"/>
+    </logger>
+
+    <logger name="com.taobao.tae.sdk.dao" additivity="false">
+        <level value="error"/>
+        <appender-ref ref="ModelAppender"/>
+    </logger>
+
+    <logger name="com.taobao.tae.sdk.web" additivity="false">
+        <level value="error"/>
+        <appender-ref ref="WebAppender"/>
+    </logger>
+
+    <logger name="com.taobao.tae.sdk.manager" additivity="false">
+        <level value="error"/>
+        <appender-ref ref="ServiceAppender"/>
+    </logger>
+
+    <logger name="com.taobao.tae.sdk.service" additivity="false">
+        <level value="error"/>
+        <appender-ref ref="ServiceAppender"/>
+    </logger>
+
+    <logger name="com.taobao.tae.sdk.platform" additivity="false">
+        <level value="error"/>
+        <appender-ref ref="PlatformAppender"/>
+    </logger>
+
+    <logger name="com.taobao.tae.sdk.agent" additivity="false">
+        <level value="info"/>
+        <appender-ref ref="AgentAppender"/>
+    </logger>
+
+    <logger name="com.taobao.tae.sdk.api" additivity="false">
+        <level value="warn"/>
+        <appender-ref ref="ApiAppender"/>
+    </logger>
+
+    <root>
+        <level value="error"/>
+        <appender-ref ref="RootAppender"/>
+    </root>
+
+
+</log4j:configuration>

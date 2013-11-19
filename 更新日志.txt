@@ -1,0 +1,998 @@
+[更新日志]
+2013/10/24
+1.[SDK工具-问题修复]
+	a) 修复htdocs配置目录资源无法正常加载的问题
+	
+2.[SDK工具-功能更新]
+  a) TAE 应用添加配置化虚拟主机功能
+  使用方法：用户可以参考位于conf目录下的配置文件：sdk.std.properties
+  
+  #自定义TAE 虚拟主机列表，如果想定义多个主机，使用","作分割符号
+  #virtual.host.lists=.apps.net
+  取消#virtual.host.lists前的符号"#"，修改成需要的虚拟主机列表（如果想定义多个主机，使用","作分割符号）
+  
+  注意：无论是否自定义TAE应用虚拟主机与否，默认虚拟主机：".taobaoapps.net" 设置保留，确保兼容性
+  
+2013/10/22
+1.[SDK工具-问题修复]
+  a) 修复htdocs配置目录资源无法正常加载的问题
+  b) 修复发布跳转链接错误的问题
+  
+2013/10/14
+1.[SDK工具-问题修复]
+  a) 修复模版打包验证时PhantomJS不兼容的问题
+     重要提示：请删除SDK中temp目录后重启，方可正常使用 
+  
+  b) 修复模版打包后无法上传的问题
+  
+2013/09/22
+1.[SDK工具-软件更新] 
+  a) TAE店铺模块类型应用去掉js文件大小以及个数校验；
+  b) JS编译输出日志优化，输出语法类错误信息；
+
+2013/09/17
+1.[SDK工具-软件更新] 
+  a) 支持跨app通信；通过service方式；
+  b) TAE店铺模块类型应用提供前后端打包功能；
+  c) TAE店铺模块类型应用前端模块默认创建JS模块，JS文件module.js默认内容：console.log('JS exec')；
+  d) TAE店铺模块类型应用前端模块默认创建带有color:black的样式文件；
+
+2013/09/12
+1.[SDK工具-软件更新] 
+    a) TAE PHP 应用开发服务CacheService添加mget方法
+	b) SDK启动速度优化
+	
+2.[SDK工具-问题修复]
+    a) 修复安全过滤配置下载错误问题
+	
+2013/09/10
+1.[SDK工具-软件更新] 
+    a) TAE PHP 应用支持多JS文件加载	
+    使用说明：
+    当PHP页面中引入以下三个脚本文件时，
+	<script src="/c1.js" ></script>
+	<script src="/c2.js" ></script>
+	<script src="/c3.js" ></script>
+	
+	最终页面会将以上三个JS脚本文件合并一个Caja编译后的文件输出：
+	<script src="/cajaed.combined-js-file-1553473238.js"></script>
+	
+	b) TAE PHP 应用支持多CSS文件加载
+	
+2.[SDK工具-问题修复]
+	a) 修复TAE PHP 页面中script标签引用合法外部资源丢失的问题
+
+	
+2013/09/04
+1.[SDK工具-软件更新] 
+	a) 支持Caja模块化
+	具体细节，请参考资源：http://newwiki.zx.taobao.com/index.php?title=JS_API#.E5.8D.87.E7.BA.A7.E5.B7.A5.E4.BD.9C:
+	
+	b) 天猫品牌站页头更新
+	
+	c) 添加TAE PHP 应用名称Form表单验证（名称只允许使用小写英文、数字、横线"-"和下划线"_"的组合）
+
+2.[SDK工具-问题修复]	
+    a）修复资源文件HTTP相应头Content-Type丢失的问题（支持大多数MIME Type格式）
+	
+	b) 其他问题修复
+	
+3.[SDK工具-已知问题]	
+    a) 模版页面CSS内容概率性丢失问题，官方正在积极修复中...
+
+
+2013/08/20
+1.[SDK工具-软件更新]  
+	a) 修改TAE应用（仅针对ISV模块迁移）对TOP JS SDK以及alimap行为支持
+	   对于使用TOP JS SDK的用户
+			1.请自行添加：<script src="http://l.tbcdn.cn/apps/top/x/sdk.js?appkey=$appKey" ></script>
+			2.如果需要生成TOP JS SDK的Cookie信息，请添加一下代码：
+			$jssdkService->init($appKey,$secret);
+			
+		对于使用alimap的用户
+			1.请自行添加：<script src="http://api.ditu.aliyun.com/map.js" ></script>
+
+2013/08/15
+1.[SDK工具-软件更新]  
+   a) 为TAE 应用（仅针对ISV模块迁移）添加JS SDK以及alimap的支持
+   
+2013/08/12
+1.[SDK工具-软件更新]  
+  a) 更新店铺页面JS URL
+
+2013/08/07
+1.[SDK工具-软件更新]
+  a) PHP 引擎升级
+  b) SDK启动自动清除临时配置文件，减少用户手动删除temp目录的操作
+  c) 安全JS更新机制升级（官方动态升级，无需升级客户端）
+  d) 添加TAE独立模块与店铺SDK模块调试时兼容性
+
+
+2013/08/05
+1.[SDK工具-问题修复]		
+  a) 修复部分设计师机器中SDK模版CSS消失问题
+  b) 修复风格管理背景图片被过滤的问题
+  c) 修复前端白名单帮助文档的问题
+  
+2013/08/01
+1.[SDK工具-软件更新]	
+  a) TAE APP应用 安全JS（Caja）更新
+     * 安全JS（Caja）运行时URL更新
+	 * 安全JS（Caja）运行时URL加载逻辑修改
+	   注：无论TAE 应用PHP页面中是否输出script标签，运行时URL皆会加载
+	   
+  b) TAE 独立模块调试添加安全JS（Caja）编译
+  
+  
+2013/07/30
+1[SDK工具-问题修复]	
+  a) 移除htdocs配置信息，解决设计师模版显示问题  
+  
+2013/07/29
+1.[SDK工具-软件更新]	
+  a) 添加模版根目录配置功能
+  说明：设计师可以配置模版根目录，实现自定义模版根目录路径。
+  使用方法：参考conf目录中的“sdk.std.properties”文件（移除#，修改对应的模版路径），
+  配置SDK 模版跟目录路径（请注意Windows用户使用"\\"表示路径分割符号）。如果没有配置的话（通过"#"取消配置），模版根目录将在SDK根目录下
+  例如：
+  sdk.htdocs.path=D:\\htdocs
+  
+2.[SDK工具-问题修复]	
+	a) 修复风格管理编辑页面问题
+	b) 修复简易模版打包错误
+	c) 修复独立模块渲染的问题
+	d) 修复编辑模版时，”模版类型“和”销售类型“对应不上的问题
+ 
+2013/07/26
+1.[SDK工具-软件更新]	
+	a) 升级PHP引擎
+	b）升级前端安全引擎
+		注意：如果出现模版渲染出问题的话，请联系（旺旺）：桃谷
+	
+2.[SDK工具-问题修复]	
+    a) 修复系统模块编辑表单提交（更新）失败的问题
+
+2013/07/19
+1.[SDK工具-问题修复]	
+	a) 修复TAE-SDK-Launcher.exe启动的问题（由于JDK 7更新后，内部实现修改）
+	b) 修复页面组装时，无法模块移动的问题
+	
+2.[SDK工具-软件更新]
+	a) 添加TAE 独立模块ISV迁移渲染逻辑
+	
+2013/07/06
+1.[SDK工具-问题修复]	
+	a) 修复TAE应用运行JS顺序问题
+
+2013/07/04
+1.[SDK工具-软件更新]
+	a) 优化页面渲染title的问题
+	b) 升级安全JS运行时
+	
+2.[SDK工具-问题修复]	
+	a) 解决AppEngine->find接口方法调用时，PHP Array参数类型转化问题
+	b) 解决SDK模块和TAE独立模块调用AppEngine->find接口返回服务对象，内置TAE上下文对象无法找到的问题
+	
+2013/07/03
+1.[SDK工具-软件更新]
+	a) 添加重载最后访问页面功能
+	
+2.[SDK工具-问题修复]	
+	a) 修复TAE APP 非U站应用 JS问题
+
+2013/07/01
+1.[SDK工具-软件更新]
+	a) TAE U站应用添加宝贝详情页链接验证，防止非法用户跳过U站收费
+	b) TAE 模板以及独立模块支持二方服务调用
+	c) SDK 模板类型添加销售类型：常规销售、自用、自用
+	   注：如果升级SDK后，无法显示销售类型中的选项，先关闭SDK，然后自行删除temp目录（相对于SDK根目录），最后重启SDK即可。
+	d) 一般性问题修复  
+	
+2013/06/07
+1.[SDK工具-软件更新]
+	a) 支持TAE独立模块开发
+    b) 新增帮助文档
+	c) 其他问题修复
+	注：本版本改动较大，如果开发过程中遇到问题，请使"缺陷反馈"反馈问题。为了不影响开发进度，回滚到202版本。
+
+2013/05/21
+1.[SDK工具-软件更新]
+	a) 添加SDK本地安全JS编译功能（不再使用远程接口）
+    b) 更新PHP引擎，提升PHP代码稳定性
+
+2013/04/12
+1.[SDK工具-软件更新]
+	a) 修改线上静态资源配置域名
+	
+2013/04/11
+1.[SDK工具-功能更新]
+	a) SDK TAE应用：在PHP页面上支持$_page->setTitle("页面标题名称")的方式设置页面标题
+	b) SDK TAE应用：同步线上的U站的页面结构	
+	
+2.[SDK工具-产品优化]
+	a) SDK TAE应用：优化JS文件异步编译策略
+	b) SDK 模板：配置化模板创建流程（创建默认的页面、添加默认的布局和模块）
+	c) SDK 模板：优化最近使用的SDK模板排序算法
+	d) SDK 模板：优化同步店铺宝贝和分类，使其删除之前的历史数据（如果您本地SDK数据是之前版本同步下来的，请手动删除。）
+	
+3.[SDK工具-问题修复]	
+	a) 修复由于JRE的升级导致的内存只能优化失效的问题
+	b) SDK TAE应用：修复smarty date_format函数问题
+
+2013/04/08
+1.[SDK工具-问题修复]
+	a) 修复页面调试时，对应的预览页面错误
+	
+2013/04/07
+1.[SDK工具-问题修复]
+	a) 修复页面调试时，风格切换菜单样式问题，导致只能显示一个风格
+	b) 修复创建模板时，系统模块目录不会自动创建的问题
+
+2.[SDK工具-产品优化]
+	a) 提升页面编辑时，模块操作的相应速度
+	b) 更新SDK中的帮助链接
+	c) 风格管理中，采用弹出新页面的方式预览模板页面
+	
+2013/04/05
+1.[SDK工具-功能更新]
+	a) SDK风格管理中添加更多的字体选择项(与线上支持的版本统一）
+	b) 支持SDK模板级别的系统模块同步，实现模板中系统模块独立展示
+	特别提示：
+		* 功能设置位于模板管理下的“店铺数据同步”页面，点击“同步系统模块”按钮即可同步
+		* 不再支持SDK全局系统模块HTML同步功能
+		* 位于conf目录下的sdk.std.properties文件中的user.nick设置，将作为系统默认同步名称。当模板没有配置适用用户时，使用该名称作为同步。
+	c) SDK模板页面组装中支持风格的切换
+
+2.[SDK工具-产品优化]
+	a) 减少SDK启动时间	
+	b) 加速系统模块渲染，提升页面整体渲染时间
+	c) 同步店铺数据时，清除之前用户同步的数据，不会生成冗余数据
+	d) 移除模板中废弃系统模块目录，移至模板目录下的"modules_backup"目录，从而减少模板打包验证中的错误等干扰
+	e) 优化“系统设置”的界面
+	
+2013/04/02
+1.[SDK工具-问题修复]
+	a) 修复天猫店铺模板SNS问题
+        b) 修复天猫店铺模板页面渲染时，$regionWidith问题
+        c) 修复模板创建时，创建无关的系统模块目录
+        d) 修复TAE应用中$_GET和$_POST参数重复问题
+		e) 修复模块宽度验证问题
+
+2.[SDK工具-软件优化]
+        a) 提升SDK启动速度（读取离线配置、减少离线文件写入、减少重复请求数量）
+
+2013/03/28	
+1.[SDK工具-问题修复]
+		a) 修复天猫页面背景无法被extra.css覆盖的问题
+        b) 修复模块参数无法更新最新的配置值的问题
+        c) 修复模块独立渲染的问题
+		d) 修复“新建模块”保存时出错
+        e) 修复“首页”模板列表不显示以及排序的问题
+        f) 更正商城同步系统模块帐号的问题
+        g) 完善文件修改通知监听注册覆盖面
+
+2013/03/27
+1.[SDK工具-功能更新]
+	a) 支持天猫店铺的模板设计（开发）
+	特别提醒：
+	* 目前仅支持类似于高级模板的功能，未来会考虑更多版本或者合并版本的支持。
+	* 相对于之前的版本，天猫版本布局存在变化，并且集市和天猫SDK模板之间无法通用，需要重新上架天猫店铺的模板。
+
+2.[SDK工具-产品优化]	
+	a) 优化PHP页面渲染速度
+	b) 优化模板中模块CSS输出速度
+	c) 优化模板组装（装修）界面，使其与线上保持统一
+	d) 针对Linux或Mac操作系统下的SDK用户，开启智能内存管理、原生Less 编译器等优化功能。
+	
+3.[SDK工具-问题修复]
+	a) 修复“首页”中模板问题
+	b) 修复“系统设置”中的操作后，导航“系统设置”Tab无法高亮显示的问题
+	c) 修复“组装模板”左侧导航栏链接不正确的问题
+	d) 修复ItemManager接口queryByCategory方法异常情况
+	
+	
+	
+2013/03/11
+1.[SDK工具-功能更新]
+	a) 为了简化Windows用户使用SDK，添加了32位的JRE 7的运行环境（软件）	
+	b) 添加SDK启动器利用SDK根目录JRE的能力
+	
+2.[SDK工具-问题修复]
+	a) 增强了异步编译的容错性（最新研究原因所得，由于用户使用不同的文本编辑器，部分编辑器将会重命名源文件，导致了遗漏某种类型的文件监听事件）
+	b) 修复当创建模板时，部分用户机器出现丢失“宝贝详情页”和“宝贝列表页”的情况
+	
+	
+2013/03/08
+1.[SDK工具-重要提示]
+	a) SDK部分功能依赖在JRE 7（或JDK 7）以上的版本，并且SVN中不再提供JRE的环境，请用户自行下载：
+	下载地址：
+	http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html
+	
+2.[SDK工具-问题修复]
+	a) 修复异步编译的问题，从而解决Less CSS不编译的问题	
+
+2013/03/04
+1.[SDK工具-问题修复]
+	a) 解决TAE SDK在中文路径下启动失败的错误(问题描述：https://code.google.com/p/tae-sdk-2/issues/detail?id=2）
+	b) 解决"同步店铺宝贝"数据无法展示问题(问题描述：https://code.google.com/p/tae-sdk-2/issues/detail?id=3）
+	c) 解决本地SDK宝贝链接与线上实现不一致的问题(问题描述：https://code.google.com/p/tae-sdk-2/issues/detail?id=8）
+	d) 解决TAE 应用的Kissy版本问题
+	
+2.[SDK工具-功能更新]
+	a) 在Windows操作系统下，添加SDK启动器，文件存放在bin目录下，名为"TAE-SDK-Launcher.exe"
+	b) SDK启动器支持Windows开机启动功能
+	c) TAE SDK支持全屏布局
+	   使用说明：
+	   *) 为了良好的用户体验，只能使用一个设计师模块作为全屏模块
+	   *) 只有首页（#bd中的内容区)提供全屏布局，其他页面均不能（建议在设计模块时，考虑其他页面兼容的情况）
+	   *) 由于设计师无法控制系统模块的dom结构，不建议设计师为系统模块做全屏功能
+	   
+	   特别说明：如果设计师违反以上规则规的话，一切后果由设计师自身承担！
+	   
+	d) 自定义XML行宽度功能（细节描述：https://code.google.com/p/tae-sdk-2/issues/detail?id=5）
+	   自定义功能配置：
+	   通过修改conf目录下的sdk.std.properties文件来自定义行宽度数值大小。
+	   通过配置参数：
+	   ...
+	   #XML 行宽度配置
+	   xml.line.width=800
+	e) 智能内存管理（优化SDK启动时间以及内存优化）	
+
+2013/01/15
+1.[SDK工具-问题修复]
+	a) 线上对post参数[]的情况作了特殊处理，以满足php的用法
+	
+2013/01/10
+1.[SDK工具-功能更新]
+	a) TAE APP JS功能升级
+	
+2013/01/09
+1.[SDK工具-功能更新]
+	a) 添加模块单独调试方法，SDK 开放JS功能升级，详细参考：http://newwiki.zx.taobao.com/index.php?title=JS_API
+	b) 自动更新配置信息功能
+		说明：
+			统一线上的配置，当配置更新时，无需重启SDK，自动更新
+		具体更新项：
+			* 更新装修规则
+			* 更新系统模块HTML内容
+			* 更新安全过滤配置
+			* 更新SDK配置信息		
+	
+2013/01/05
+1.[SDK工具-功能更新]
+	a) 新增评论选择器组件
+	   开发文档：http://newwiki.zx.taobao.com/index.php?title=%E5%BC%80%E6%94%BE%E6%8E%A5%E5%8F%A3#.E5.AE.9D.E8.B4.9D.E8.AF.84.E4.BB.B7.E9.80.89.E6.8B.A9.E5.99.A8.E8.AF.B4.E6.98.8E
+	   Demo下载：http://www.kuaipan.cn/file/id_63428115682051765.htm
+
+2012/12/27
+1.[SDK工具-功能更新]
+	a) 重大更新：Kissy 1.1.6 -> Kissy 1.3.0 。如果存在兼容性问题，请在SDK工具的缺陷反馈中反馈
+	b) TAE 应用YAML配置与线上同步
+	
+2.[SDK工具-问题修复]
+	a) 修复中文乱码问题
+	b) 修复PDOStatement::rowCount总是返回0
+	
+2012/12/25
+1.[SDK工具-问题修复]
+    a) 升级PHP引擎，解决一下问题：
+		* PHP 里面 json_encode() 编码错误
+		* 字符串做equals时，当右操作数是数字时，没有判断自己是否是数字，直接toDouble； toDouble在非数字时直接返回0，造成判断错误
+		* PDOStatement::rowCount总是返回0
+		
+		
+2012/12/18
+1.[SDK工具-问题修复]
+	a) 暂时移除apply-user内容，已解决上传问题
+	b) 修复自定义内容区等无法打包问题
+
+2012/12/13
+1.[SDK工具-功能更新]
+	a) 添加请求并发处理器数量
+	b) 修改“店铺数据同步”的文案描述	
+	
+2012/12/11
+1.[SDK工具-功能更新]
+	a) 添加同步线上宝贝评价功能
+	b) 添加基础模板校验逻辑（不能使用背景图片和皮肤数量必须是一套）
+	c) 移除基础模板添加皮肤的功能
+	
+2.[SDK工具-问题修复]
+    a) 模块渲染CSS失效的问题
+	
+	
+2012/12/9
+1.[SDK工具-功能更新]
+	a) 添加线上店铺数据同步功能：同步宝贝信息和店铺分类信息
+	   使用说明：单个模板开始支持同步指定店铺的宝贝信息和店铺分类信息
+	b) 模板CSS资源请求优化，减少CSS HTTP请求数量以及相应速度	
+	
+2012/12/3
+1.[SDK工具-功能更新]
+	a) 优化Less JS和JS 等异步编译，即优化文件修改通知机制
+	b) 优化SDK Web请求处理能力，即优化非阻塞（NIO）处理
+	c) 优化SDK 管理页面的相应时间
+	d) 调整SDK 缺陷反馈右边工具栏仅在“缺陷反馈”出现
+
+2.[SDK工具-问题修复]	
+	a) 处理图片文件伸缩中文件名匹配兼容问题，例如：图片名称中包含字符：_ 
+	b) 处理SDK折扣价格数据问题（应该小于等于原价）
+	c) 处理SDK模板行业数据更新后，页面显示延迟的问题
+
+
+2012/11/30
+1.[SDK工具-功能更新]
+	a)【SDK TAE应用】添加 $context->getBrowser()->getNick() 的加密（ http://bangpai.taobao.com/group/thread/15146155-278540323.htm）
+	b)【SDK TAE应用】添加TAE APP Service方法调用前注入context，如果是TAE模板的话，调用$context->siteOwner返回店铺的用户信息
+	b)【SDK TAE应用】添加iframe白名单，支持u站的多级域名
+	c)【SDK TAE模板】模块PHP上下文中添加$_taeServer 上下文变量	
+	d)【SDK TAE模板】添加*.taobaoapps.net 域名白名单
+	e)【SDK CSS相关】支持CSS注释保留功能和内容格式化
+	f)【SDK 基础模板】该版本为预览版，由于线上配置还未完成，待配置完成后可以完全开发：添加布局控制（布局管理功能，在添加布局时限制，只能添加两栏布局（190-750/750-190））、一套皮肤、以及装修规则配置以及校验逻辑
+	g)【SDK 功能】更新创建模板时，模板区别连接（ http://newwiki.zx.taobao.com/index.php?title=%E6%A8%A1%E6%9D%BF%E7%AE%80%E4%BB%8B）
+	h)【SDK 开放接口】宝贝SKU接口修改，具体参考：http://newwiki.zx.taobao.com/index.php?title=%E5%BC%80%E6%94%BE%E6%8E%A5%E5%8F%A3#sku.E6.8E.A5.E5.8F.A3.E8.AF.B4.E6.98.8E.EF.BC.88.E5.8D.B3.E5.B0.86.E4.B8.8A.E7.BA.BF.EF.BC.8C.E8.AF.B7.E4.B8.8D.E8.A6.81.E5.9C.A8.E7.BA.BF.E4.B8.8A.E4.BD.BF.E7.94.A8.EF.BC.89
+	
+
+
+2012/11/27
+1.[SDK工具-问题修复]
+	a) 修复TAE APP Smarty 数组错误
+	b) 修改Google 二维码图片显示错误
+	c) 解决Quercus PDO实现的lastInsertId永远返回0的问题
+	
+2012/11/25
+1.[SDK工具-功能更新]
+	a) 为了减少设计师剪裁图片的工作，SDK开始支持图片尺寸伸缩（重定义）功能-即通过HTTP请求访问生成制定图片尺寸的图片文件，类似于淘宝图片CDN
+	例如：
+	用户HTTP请求为：
+	http://localhost:8080/test/assets/images/default-thumbnail.png
+	该图片文件名为：default-thumbnail.png,存放在htdocs中的/test/assets/images/下
+	如果修改用户HTTP请求为：
+	http://localhost:8080/test/assets/images/default-thumbnail.png_200x300.png
+	将根据请求URI中的200x300，在该图片的相同目录下，生成宽为：200，高为：300的图片（单位：像素）的图片文件：default-thumbnail.png_200x300.png，
+	其他尺寸图片依次类推。
+	支持文件的类型：jpg,png,git,bmp等多种格式
+
+	
+	
+2012/11/22
+1.[SDK工具-功能更新]
+	a) SDK新增“评论接口"的支持 
+		相关wiki资源：http://newwiki.zx.taobao.com/index.php?title=%E8%AF%84%E4%BB%B7
+	b) SDK新增“宝贝SKU信息"接口的支持 
+		相关wiki资源：http://newwiki.zx.taobao.com/index.php?title=SKU	
+	
+2.[SDK学习资源]
+	新wiki地址（持续更新）：http://newwiki.zx.taobao.com
+
+2012/11/21
+1.[SDK工具-功能更新]
+	a) 添加模板类型：支持TAE开发
+	b) 添加TAE模块图形化界面支持
+	c) 添加配置信息容错性机制，确保线上服务器不稳定时，SDK仍然继续工作
+	
+2.[SDK工具-问题修复]
+	a) 修复JSONP待淘宝顶部HTML内容的问题
+	
+2012/11/19
+1.[SDK工具-功能更新]
+   a) 更新安全JS资源，目前已发布到线上，无需再次绑定hosts文件
+   b) 统一TAE线上的配置安全HTML、CSS配置，支持iframe等特性
+   c  TAE应用取消950布局限制
+   d) 升级软件依赖文件的正式版本
+   
+2012/11/9
+1.[SDK工具-功能更新]
+	a) 更新最新的安全JS资源
+	特别提醒：由于封网期间不能发布，最新代码将在11/11号之后发布， 目前可以绑定hosts：
+	110.75.14.33 a.tbcdn.cn assets.taobaocdn.com
+	b) 更新TAE应用YAML配置规则（与线上统一）：安全配置和URI路由规则
+	
+2.[SDK工具-问题修复]
+    a) 修复模块预览时，CSS不加载的问题	
+	b) 修复TAE应用中的，header PHP函数使用问题
+	特别提醒：HTTP响应头采用白名单方式管理，部分不能使用
+	c) 修复“缺陷反馈”中，在特殊情况下，页面浏览异常情况
+	
+
+2012/11/8
+1.[SDK工具-问题修复]
+	a) 修复CPU使用率高的问题
+	b) 修复错误配置的TAE应用时，提示页面信息乱码问题
+
+2012/11/7
+1.[SDK工具-功能更新]
+	a) 支持全局Less文件（common.less）异步编译
+	   说明：当common.less修改后，相关的使用Less的模块重新编译一次
+	b) 支持皮肤名称修改功能
+	   说明：在“管理风格”页面中，允许修改皮肤（风格）的名称以及ID值
+	   特别提醒：请使用图形化界面修改皮肤（风格）的信息，才能保证模板以及模块CSS文件内容不丢失，千万不要手动修改
+	c) 添加缺陷反馈功能，具体使用细节，请参考SDK服务器中的"缺陷反馈"页面
+	d) 兼容前版本的SDK服务器配置参数
+	   说明：兼容前版本中的启动脚本配置参数，例如同步店铺信息user.nick。
+	   特别提醒：
+	   
+	e) 支持JS异步编译功能
+		说明：当JS源文件修改后，会异步编程生成安全JS文件，并且会备份上次的安全JS文件。
+		如果存在错误的话，会生成错误日志。直到下次成功编译后，错误日志将会自动删除。
+		
+	f) JS模板功能更新：
+		前端js 更新
+		* 增加了错误收集功能
+		js模板上线后，错误会进行收集，如果线上问题报警过多的话，会邮件或旺旺提醒设计师
+		* 修复了 Event.on(node, type, function(e){})
+		e 对象获取不到type, halt, preventDefault等属性和方法的bug
+        * 对js 相关方法与前端规范进行校验。 比如html中不能使用 canvas标签，那么使用 dom.innerHTML = "<canvas></canvas>"也不会赋值成功。canvas会被过滤掉
+		
+	    特别提醒：由于封网期间不能发布，最新代码将在11/11号之后发布， 目前可以绑定hosts：
+		110.75.14.33 a.tbcdn.cn assets.taobaocdn.com
+		
+	g) 更新TAE 安全配置更新
+		说明：开始支持资源目录，例如app.yml部分配置：
+		security:
+		#front下面页面都是所有人可以访问
+		- {url: /view/front,role: anonymous }
+		其中/view/front就是资源目录		
+
+2.[SDK工具-问题修复]
+	a) TAE应用错误页面乱码问题
+	b) 页面JSON文件自动移除非法模块后，解析失败的问题
+	   说明：当模板中的某个模块错误或者被删除后，如果其中一个页面添加了该模块，SDK会自动移除JSON文件内容中的该模块ID配置。早一个版本存在这个问题，目前已经修复。
+
+2012/11/5
+1.[SDK工具-功能更新]			  
+	a) 优化静态文件服务器 URL：将localhost替换成IP，减少DNS查询，并且移除只有本机可以访问图片的限制
+	b) TAE APP 移除角色：siteowner 。目前保留的角色:developer,sitecustomer,anonymous	
+	
+2.[SDK工具-问题修复]
+	a) 修复系统模块JS错误
+	
+	
+2012/11/4
+1.[SDK工具-功能更新]			  
+	a) SDK添加图形化界面对JS模板开发的支持
+	b) 当SDK服务器关闭后，Node JS 静态文件Web服务器将自动关闭
+	c) 统一SDK服务器配置参数
+	   特别提醒：为了解决Windows和非Windows启动脚本中的参数不一致的问题，SDK服务器配置参数将统一处理。
+	   SDK服务器配置参数分为两个版本：标准版和开发版。标准版是功能稳定的版本，开放版则是添加SDK实验性功能。
+	   两者配置文件存放在conf目录下，文件名分别为：sdk.std.properties和sdk.dev.properties。配置选项中有注释，
+	   开发者可以根据开发机器的特点调整sdk.dev.properties(开发版配置），请尽可能地不要删除sdk.std.properties文件中配置。
+	   不过如果开发人员需要同步系统模块的信息的话，需要在sdk.std.properties中修改，StartServer.bat或类似的启动脚本已经不再起效果。	  
+	   
+
+	
+2012/11/1
+1.[SDK工具-功能更新]			  
+    a)  新增原生Node JS 方式Less CSS 编译器实现
+		说明：尽管之前的SDK中采用异步地方式来编译Less成CSS，不过由于JVM模拟的JS执行环境工作效率不高，因此采用原生Node JS方式的编译。
+		经过在Intel i7 3770中测试，编译Less CSS官方的benchmark文件，大小为95KB。老编译器执行消耗时间为：7000-8000ms之间。
+		新的时间缩短到：250-300ms，并且消耗更少的内存空间。
+		特别提醒：
+			针对Windows用户，SDK自带Node JS程序，用户无需关心CPU架构，SDK将会自动识别选择适合的程序。
+			如果想体验新功能的Windows用户，请启动:NewStartServer.bat。如果想继续使用老编译器的用户，可以选择启动：StartServer.bat。			
+			为了减少SDK软件的大小，非Windows用户暂时没有提供Node JS程序。
+			不过，SDK会自动探测到操作系统中是否安装了Node JS程序。如果自检成功的话，将会激活Node JS功能，同时，控制台Console中将有文字提示：“[提示] Node JS 功能激活！”
+			在某种情况下，如果新Less CSS编译器不工作的话，SDK将会自动切换到老的编译器，保证程序运行良好。
+	
+	b)  新增Node JS 静态文件Web服务器（仅支持Windows操作系统）
+		说明：尽最大可能地提高并发处理请求能力和减少SDK图片等静态文件请求响应时间，SDK开发工具中，提供了Node JS方式实现的静态文件Web服务器。
+		使用前提：Node JS功能激活
+		如果启动成功后，控制台Console中将会有文字提示：
+		[提示] Node JS 功能激活！
+		[提示] Node JS 静态服务器[根目录路径：D:\TAE_SDK\htdocs，端口：9999]已经启动！
+		注意事项：
+			1. 如果想体验新功能的Windows用户，请启动:NewStartServer.bat。如果想继续使用老编译器的用户，可以选择启动：StartServer.bat。	
+			2. 该功能仅在Windows操作系统测试通过，目前已知的Bug：非Windows系统可能出现底层IO图片无法访问的问题。
+			3. 如果Node JS服务器非正常原因当机，SDK将会自动切换回JVM实现的静态文件Web服务器。
+			   在这种情况下，如果极少数情况下，会有少量图片丢失，不要担心，再次刷新页面即可。
+			4. 在关闭SDK主程序后，请自行关闭node-xxx.exe的进程，避免资源的浪费。（未来SDK将会考虑自动杀死Node进程）。	
+			
+	c)  为TAE应用添加安全JS编译功能
+		说明：当JS文件example.js被修改后，SDK将采用异步编译的方法，对其编译。
+			  如果编译成功，会生成名为example.js.caja的文件，并且会备份上一次的文件内容，如果存在的话。
+			  若编译失败，会错误提示文件：example.js.error.log文件，其文件内容为错误提示。待下一次成功编译后，删除该错误日志文件。
+		
+	d)  为TAE应用添加淘宝头尾页面内容
+
+
+2012/10/30
+1.[SDK工具-问题修复]
+	a) 修复TAE 数据库中文支持的问题
+	   详细说明：例如DML语句中的出现了中文时，语句执行结果超出期望。注意，线上TAE应用服务器经支持MySQL中文GBK环境。
+	   因此，在本地SDK开发TAE应用时，请使用如下PDO的数据库连接实例代码：
+	   
+	   $mysqlHost="localhost";
+	   $mysqlPort='3306';
+	   $dbName='vote_app';
+	   $username='root';
+	   $password='123456';
+	   $dbConnection='jdbc:mysql://' . $mysqlHost . ':' . $mysqlPort . '/' . $dbName . '?characterEncoding=GBK';	
+	   $pdo = new PDO($dbConnection, $username, $password);
+	   
+	   其中,
+	   $mysqlHost:为MySQL主机地址
+	   $mysqlPort:为MySQL服务端口
+	   $dbName:数据库名称
+	   $username:数据库访问用户名
+	   $password:数据库访问密码
+
+	   特别提醒，本地调试TAE应用的数据库PDO的构造器参数（$dbConnection,$username,$password），无需担心对线上数据库访问的影响。	
+	   同时，在本地开发时，请让数据库和数据表的默认字符集编码设置为：GBK。
+	   
+	
+2012/10/29
+1.[SDK工具-问题修复]
+	a) 修复TAE Smart中文乱码问题
+	
+2.[SDK实例-DEMO更新]
+    a) 根据TAE APP实现，更新最新的 TAE APP demo
+	
+	
+2012/10/27
+1.[SDK工具-功能更新]
+	a) SDK TAE应用开发功能调整，保持线上和线下一致。
+
+2.[SDK工具-开发文档]
+	a) SDK开发工具中添加文档支持，文档存放在docs目录下（相对于SDK根目录）,包括：TAE SDK 2 模板开发手册-v1.0.0.doc和TAE SDK 2 应用开发手册-v0.9.doc
+
+3.[SDK工具-调整优化]
+	a) 添加容错机制：当设计师手动删除模块目录后，该模块仍然被页面使用时，自动移除该模块，不再提示错误
+	b) 风格管理页面，修复全局样式为空的情况
+	c) 模板存在多种风格时，凡是使用Less CSS的模块，其对应皮肤的Less CSS文件将会自动创建（如果不存在的话）
+	d) 模块Less CSS文件编译发生错误时，添加错误日志文件，方便开发调试。待成功编译后，日志文件将会自动删除，以免干扰开发
+
+4.[SDK工具-问题修复]
+	a) 修复模块因less风格被锁定无法删除的问题
+	b) 修复模块编辑状态无法创建js的问题
+
+
+2012/10/23
+1.[SDK工具-问题修复]
+	a) 修复页面编辑中SDK无法添加模块的问题，原因：由于线上JS调整
+
+2012/10/22
+1.[SDK工具-问题修复]
+	a) 修复模块编辑界面保存失效的问题
+
+2012/10/21:
+1.[SDK工具-调整优化]
+	a) [仅启动NewStartServer.bat时] 内存使用率优化，即当CPU闲暇时，清理SDK占用的内存
+	
+2.[SDK工具-问题修复]
+	a) 修复宝贝选择器数据加载失败的问题
+	b) 修复模块资源文件同步失败的问题
+	问题重现的条件：
+		当模板中出现未同步的系统模块时
+		
+	可能受到的影响有：
+		1.LessCSS 文件修改编译后，无法同步到CSS文件
+		2.模块描述文件 module.xml 修改后，无法出现效果
+	
+2012/10/19:
+1.[SDK工具-调整优化]
+	a) SDK支持图片脱机模式，优化网络带宽。
+	   使用说明：仅Windows使用，用户启动NewStartServer.bat，启动脱机模式。
+		如果发现脱机模式降低了系统性能，请使用StartServer.bat，关闭脱机模式。
+	b) SDK性能优化：再次提升服务器处理图片的响应速度，减少等待时间，加快本地图片加载速度
+	c) SDK性能优化：减少页面渲染计算时间，提升相应速度
+2.[SDK工具-问题修复]
+    a) 修复当本地图片替换后，服务器缓存不同步的问题
+	
+2012/10/17:
+1.[SDK工具-调整优化]
+	a) SDK性能提升：采用服务端和客户端双缓存，提升本地图片加载速度
+	
+2012/10/15:
+1.[SDK工具-问题修复]
+	a) 修复模板打包验证时，中文皮肤目录找不到的问题
+
+2.[SDK辅助开发工具]
+	a) 最新JDK下载：
+		Windows操作系统32位JDK ：http://www.kuaipan.cn/file/id_63428115682035756.htm
+		Windows操作系统64位JDK ：http://www.kuaipan.cn/file/id_63428115682035757.htm
+		Linux操作系统32位JDK ：http://www.kuaipan.cn/file/id_63428115682035758.htm
+		Linux操作系统64位JDK ：http://www.kuaipan.cn/file/id_63428115682035755.htm
+3.[SDK工具-调整优化]
+    a) 移除无用连接，减少请求等待时间
+
+2012/10/14:
+1.[SDK工具-调整优化]
+	a) SDK 性能提升：利用内存减少外存的开销
+	b) 为Windows操作系统新增实验性的启动脚本：NewStartServer.bat，尝试减少SDK服务器等待时间
+
+2012/10/12:
+1.[SDK工具-问题修复]
+	a) 修复Less CSS异步编译失败问题
+	b) 修复nl2br()函数不支持中文的问题
+
+2.[SDK工具-调整优化]
+	a) 新建模块时，添加自动创建Less CSS文件或者JS 文件功能
+	b) 移除简易模板创建设计师模块的功能
+	c) 修改“如何编写模块”的链接：http://wiki.zx.taobao.com/tools/systemmodules/welcome.php
+	d) 减少系统资源的占用，增强SDK处理并发请求的能力	
+	e) 创建模块时，默认宽度全部选择
+    f) 模块创建时，默认选择less文件创建
+	g) 优化模块中less文件的内容
+	h) 模板创建时，默认类型选择“高级模板”		
+	i) 减少软件资源开销，提升处理并发请求的能力
+	
+
+2012/10/10:
+1.[SDK工具-问题修复]
+	a) 为新系统模块添加新样式资源，修复系统模块样式丢失的问题
+	b) 修复模板验证时，模块参数数据丢失的问题（辅助解决模块页面元素中style属性，使用模块默认参数值验证错误问题）
+	c) 添加模块渲染后的HTML内容验证
+	d) 修复非Windows操作系统下多网卡Mac地址计算错误
+	e) 修复模板验证时，由于URIManager实现没有返回值，导致验证失败	
+	f) 添加多网卡Mac地址计算容错机制
+	
+2.[SDK工具-调整优化]：	
+	a) 新建模板时，为默认创建的页面添加默认缩略图片(默认路径：assets/images/default-thumbnail.png)
+    b) 新建模块后，为默认创建的模块添加默认缩略图片(默认路径：../../assets/images/default-thumbnail.png)
+	c) 支持中文名称的风格。请注意“风格管理”中的编辑表单页面改变-添加了风格ID的字段(仅支持英文、数字、横线"-"和下划线"_"的组合)，用于皮肤样式用于样式文件名或目录名
+	
+
+2012/10/09:
+1.[SDK工具-新功能]
+    a) 提供简易模板开发
+	b) 强制CSS内容验证，特别提醒凡是CSS定义中为空的话，均视为错误，尤其注意新增加的系统模块
+
+
+2.[SDK工具-系统优化]：
+	a) Less异步编译采用文件修改监听的方式实现
+	b) 采用异步化操作，提升管理页面的请求相应速度
+	c) 软件瘦身，提高启动速度	
+	
+2012/10/08:
+1.[SDK工具-问题修复]:
+	a) 修复导航模块重复加载JS错误
+    b) 修复IE浏览器下，最新SDK JS功能失效的问题
+	c) 修复非法系统模块同步，排除重复的模块
+	
+2.[SDK工具-系统优化]:
+    a) 优化系统模块目录自动创建
+
+2012/09/29
+1.[SDK工具-系统优化]:
+  a) 模板全局样式extra.css验证错误信息提示优化，帮助设计师更好的定位错误
+  
+  b) Less CSS添加异步编译和同步编译，其中同步和异步编译由用户决定。请参考SDK工具中"系统设置" 内容。
+     特别提醒：如果异步编译存在的问题的话，首先，请镇定情绪，然后使用同步编译继续工作，最终将反馈问题给相关开发人员。
+	 
+	 
+  c) 调整"我的模板"页面中显示模板的个数：10个（之前为2个）。也可以根据设计师偏好自主配置-修改StartServer.bat或startServer.sh中的配置
+  -Ddisplay.template.number.per.page=10 中的数值。
+  
+  d) "我的模板"页面中和SDK首页模板展示顺序将以最近修改模板优先排序
+  
+2.[SDK工具-重大修改] ：
+  a) 为TAE应用添加权限角色访问控制
+  
+  其中，权限角色列表：
+	  匿名用户：anonymous
+	  店铺浏览者：shopcustomer和sitecustomer 
+	  app开发者：developer
+	  卖家：shopowner,siteowner
+  YAML配置（app.yml):
+  #安全和权限配置
+	security:
+	- {url: /, role: anonymous }
+	- {url: /itemlist, role: developer }
+	- {url: /report, role: shopowner} 
+	
+  当用户访问/itemlist时，需要developer权限。如果权限不够的话，会重定向到权限切换登录页面（URI：/login/form）
+  例如：http://vote-app.taobaoapps.net:8080/login/form
+  当用户输入用户名登录后，其输入值等于$context->browser->nick
+
+    
+	  
+2012/09/26
+1.[SDK工具-重大修改] ：
+  a) 修改SDK TAE Open API接口定义，请参考SDK根目录中的tae_open_api.php和topclient.php（TOP应用的支持）
+  b) 添加SDK Open API 接口定义参考文件：sdk_open_api.php（SDK根目录中）
+  c) SDK模板打包验证规则修改：
+	 * 资源文件数量验证：系统模块目录下的文件不再统计范畴，资源文件（不包含目录）数量限制仍然是300个
+	 * 模块参数验证：添加模块参数类型的验证，比如ptype="number"的模块参数值为abc的话，会提示错误
+	 
+2.[SDK工具-问题修复] : 
+  b) 当TAE应用渲染失败时，提示信息错误问题
+
+2012/09/25:
+1.[SDK工具-问题修复] :
+	a) 修复LessCSS文件背景图片问题。实现限制：目前路径匹配算法不完美，请大家使用全路径值作为Less变量
+	   例如：
+	   定义如下：
+	   @picURL: assets/images/pic.jpg
+	   使用时：
+	   background-image:url(@picURL);
+	   
+	   如果使用如下，将不工作：
+	   @picFile: pic.jpg
+	   background-image:url(assets/images/@picFile);
+	   
+	a) 修复extra.css中模块公用样式被过滤的问题	
+
+
+2012/09/24:
+1.[SDK工具-重大修改] ：
+	a) SDK工具和线上开始对checkbox支持，并且多值分割符号为：@_@
+	   例如：$_MODULE['checkbox'] = "1@_@2@_@3"，表示选择值为1、2和3的选项，请注意checkbox
+    b) SDK JS功能添加IO Event支持，功能保持wiki文档一致。资源地址：http://wiki.zx.taobao.com/index.php/JS_API
+
+2.[SDK工具-系统优化] ：
+	a) LessCSS编译优化，解决前版本采用系统编译方式所带来的长时间等待。目前采用浏览器编译，大幅提升编译速度。而系统编译方式则在模板打包时执行
+	b) 添加模板皮肤extra.css权限：添加部分模块公用样式，具体参考一下SDK工具“风格管理”页面
+
+3.[SDK工具-问题修复] :	
+    a) 页面装修编辑时，官方SNS分享组建不显示的问题
+	b) 修复模板皮肤extra.css样式漏洞
+	
+4.[SDK工具-新特性] ：
+    a) 支持最新TAE应用开发，不同于SDK模板开发。TAE应用支持数据库存储、分布式缓存、分布式文件系统、远程TOP API调用等特性。
+	   具体参考文档： http://www.kuaipan.cn/file/id_63428115682033920.htm
+	   Demo下载地址：http://tae-sdk-2.googlecode.com/svn/trunk/demos/tae-demo.zip
+
+2012/08/30:
+1.[SDK工具-问题修复] :
+	a) 修复无法同步指定用户店铺的系统模块内容
+	b) 修复当模块公用代码PHP文件不存在时，模块渲染失败的问题
+	c) 修复切换商品图片格式时，图片不显示的问题，同时兼容对老图片格式支持，不过部分设计师老的PHP代码需要修改。
+		新增三个图片格式：
+		b = 220x220
+		m = 120x120
+		sum = 80x80
+		代码使用方法：
+		$item->getPicUrl("sum"); 结果：http://img03.taobaocdn.com/bao/uploaded/i3/T1mwjoXc0fXXaHjx36_061829.jpg_sum.jpg
+		$item->getPicUrl("m"); 结果：http://img03.taobaocdn.com/bao/uploaded/i3/T1mwjoXc0fXXaHjx36_061829.jpg_m.jpg
+		$item->getPicUrl("b"); 结果：http://img03.taobaocdn.com/bao/uploaded/i3/T1mwjoXc0fXXaHjx36_061829.jpg_b.jpg
+	d) 接口代码恢复：$shopManager接口,将继续使用;	
+	
+2012/08/29:
+1.[SDK工具-问题修复] :
+	a) SDK工具中产品模式中select控件参数存在问题
+	b) EXTR_PREFIX_ALL| EXTR_OVERWRITE 丢失的问题
+	c) 模块参数ptype=number时，小数点渲染失败
+	d) 修复模块PHP和CSS文件中的错误提示内容：
+		修改后的PHP文件提示：3.元素class属性值禁止以"tb-"和"J_T"字符开头,除[tb-module,J_TWidget,J_TokenSign,J_CartPluginTrigger]以外
+		修改后的CSS文件提示：1. CSS选择器必须包含 ".tshop-*"，禁止使用模块页面元素的ID选择器
+		
+2.[SDK工具-功能提升]
+	a) $regionWidth变量的支持，其作用是让模块知晓所在布局栏位的宽度。比如在190栏位，返回值为190，以此类推。
+		示例代码：
+		if($regionWidth == 190){
+			//展示190布局下的
+		}
+	b) 模块公用PHP代码支持，其作用是让所有模块能够代码复用，减少冗余。
+		使用方法：		如果新建、编辑模板的话，模板目录下自动创建common.php,该common.php为modules目录下的所有本地模块tshop-um-*.php文件所共享
+		其他情况，请自行创建common.php
+		只要common.php文件存在，任何设计师模块PHP代码都能复用其中的代码
+		特别注意：模块PHP文件和common.php内容空间大小限制：10KB，如果违反规则，将会影响模板上传和升级
+	c) 新SNS支持（线上系统次日支持）
+		添加jiathis的SNS分享支持（form表单形式）
+		添加google的二维码支持
+	d）恢复（添加）收藏和购物车类选择器的支持：J_TokenSign，J_CartPluginTrigger（模块HTML元素class允许值为：tb-module,J_TWidget,J_TokenSign,J_CartPluginTrigger）
+	
+	e）开放所有官方宝贝图片尺寸格式（持续更新）：		300,24x24,30x30,40x40,60x60,70x70,80x80,100x100,110x110,120x120,160x160,170x170,210x210,250x250,310x310,430x430,670x670,128x128,90x90,32x32,64x64,400x400,460x460,480x480,200x200,16x16,570x570,48x48,72x72,145x145,20x20,36x36,230x230,240x240,130x130,290x290
+	
+	
+
+2012/08/24:
+1.[SDK工具-数据接口升级] 提供折扣价格，简单使用说明：
+	调用方法：$item->discountPrice
+	该数据接口返回的折扣价格，在SDK中是随机数，在线上是真实的折扣价格。
+	特别注意：该接口可能返回null，表示没有折扣价，设计师应该注意代码写法。返回值可能存在多位小数，请设计师自行做格式化。
+	例如：if($item->discountPrice) {
+			//说明折扣价存在，编写逻辑	
+			//格式化保留两位小数，参考资料：http://php.net/manual/en/function.number-format.php
+			echo number_format($item->discountPrice,2);
+		  }
+	如果线上$item->discountPrice 与$item->price的数值相等的话，说明没有折扣。	  
+	例如：if($item->discountPrice ==$item->price){
+		  }
+		  	
+2.[SDK工具-软件升级] 升级PHP渲染引擎，与线上系统保持一致
+					 
+3.[SDK工具-问题修复] 
+	a) #hd和#bd之间的10px问题。在10px和0px之间，设计师可二选一的方式，控制间距	
+	b) 修复宝贝详情页添加模块的问题
+	c) 修复切换行业数据后，已选择的宝贝选择器问题
+	d) 修复风格管理中，保存后，图片路径自动替换成全路径的问题，影响上传后的图片不显示
+	e) 修复切换行业数据后，前行业宝贝遗留的问题
+4.[SDK工具-系统优化] 
+	a)减少软件内存和磁盘占用空间，节约网络带宽
+	b)系统模块同步优化，容错性更强
+	c)取消模板缩率图等强制验证
+
+
+2012/08/14:
+1.[SDK工具] 修复问题：设计师模块参数表单二次提交错误
+
+2012/08/13:
+1.[SDK工具] SDK 2.0.0 Fix 1版本更新
+	修改列表：1.修复“页面编辑”中，头部无法添加其他模块的问题
+			  2.修复“首页”上相同模板重复出现的问题
+			  3.调整页面渲染的策略，单个模块PHP页面渲染出问题时，不再整体页面渲染失败
+			  4.调整模板、页面和皮肤编辑表单页面，部分字段不能被修改
+			  5.调整系统模块店铺账号
+
+2012/08/12:
+1.[SDK示例]：添加JS Demo模板
+2.[SDK文档]：添加《SDK 2.0.0 如何使用JavaScript-V1.0.0.docx》文档
+
+2012/08/09:
+1.[SDK文档]：添加《SDK 2.0.0 如何同步系统模块-V1.0.0.docx》文档
+
+2012/08/08:
+1.删除工具zip包文件，改用云盘下载，账号：tae_sdk2@163.com,密码：sdk123456
+	
+
+2012/08/07:
+1.[SDK工具]：SDK 2.0.0 正式版本发布，目前仅支持C店铺
+2.[SDK工具]：JavaScript支持（原生JS和Kissy 1.1.6），参考资源：http://docs.kissyui.com/index-1.1.6.html
+3.[SDK工具]：CSS Less 支持，参考资源：http://www.lesscss.net/
+4.[SDK工具]：新装修系统（与线上系统保持一致）
+5.[SDK工具]：装修规则支持（与线上系统保持一致）
+6.[SDK工具]：系统模块同步，系统模块的HTML接口来源于线上系统，如果线上系统调整，用户只需要手动点击“同步”。用户自由配置不同的C店铺，从而同步不同店铺的系统模块内容。
+7.[SDK工具]：SDK打包验证，SDK 2.0.0开始，SDK模板必须通过工具打包验证，否则无法上传
+8.[SDK工具]：SDK回退到Kissy到1.1.6版本，意味着设计师可以按照老Kissy组件写法，使用Kissy组件。
+9.[SDK工具]：由于文档陈旧，移除了文档目录，文档更新和下载另行通知。
+
+	
+
+2012/07/09:
+1.[SDK工具]：页面装修时，自定义加载全局皮肤extra.css。
+	默认装修不加载。如果需要加载全局CSS，请看以下教程：
+	默认的装修URL：http://localhost:8080/design/page/debug/test/index.json/，
+	其中URI：/design/page/debug/是固定路径，test为模板目录名称，index.json为调试页面的名称，其规律模式为：
+	http://localhost:{port}/design/page/debug/{templateDirectory}/{pageFileName}/  
+	a)切换皮肤
+		URL模式：http://localhost:{port}/design/page/debug/{templateDirectory}/{pageFileName}/{themeName}
+		比如，默认URL：http://localhost:8080/design/page/debug/test/index.json/
+		等价于：http://localhost:8080/design/page/debug/test/index.json/default/，
+		切换红色皮肤：http://localhost:8080/design/page/debug/test/index.json/red/
+	b)加载全局extra.css
+		URL模式：http://localhost:{port}/design/page/debug/{templateDirectory}/{pageFileName}/{themeName}/{loadExtraCss}
+		比如，默认URL：http://localhost:8080/design/page/debug/test/index.json/
+		等价于：http://localhost:8080/design/page/debug/test/index.json/default/false/，
+		加载默认皮肤extra.css：http://localhost:8080/design/page/debug/test/index.json/default/true/
+		
+		
+2012/07/05:
+1.[SDK工具]：CSS输出乱码问题
+2.[SDK工具]：调整宝贝选择器界面中“已选择”的宝贝出现顺序，将按照用户选择的顺序。
+3.[SDK工具]：解决ptype=number时输出字符的问题，目前ptype=number后，将输出数字类型，未来支持更多ptype格式。
+4.[SDK工具]：为Mac SDK启动脚本startServer.sh提供添加配置信息，与Windows功能保持一致。
+5.[SDK工具]：修复当模块参数保存时，类目选择器参数被清除
+6.[SDK工具]：修复当模块参数保存时，参数值为空不保存的问题
+7.[SDK工具]：修复系统模块JS路径错误
+
+2012/06/29:
+	1.[SDK工具]：修正ItemManager queryByIds方法 sortType不工作
+	2.[SDK工具]：修正宝贝选择器中文查询失效
+
+2012/06/28:
+	1.[SDK工具]：修正布局管理模块无法移动和删除问题
+	2.[SDK工具]：修改默认创建的模块CSS文件内容
+	3.[SDK工具]：模板ID、页面文件名称、设计师模块ID和皮肤名称开始支持下划线"_"
+	4.[SDK工具]：修复模块内联style属性时，模块渲染结果成null的错误
+	
+2012/06/26:
+	1.[SDK工具]：从SDK根目录中移除temp文件夹，SDK启动后自动创建该目录，如果不存在的话。
+      说明：为了防止发布前的测试数据提交SVN目录中，影响设计师SDK的使用。
+	2.[SDK工具]：添加docs目录到SDK根目录中，最新文档资料将存放在该目录，方便设计师学习。
+	3.[SDK使用]：TAE SDK 2.0.0 如何添加SNS功能：http://bbs.zx.taobao.com/read.php?tid=22879
+	4.[SDK工具]：从SDK根目录中移除日志（logs）文件夹，SDK启动后自动创建该目录，如果不存在的话。
+      说明：为了防止发布前的测试数据提交SVN目录中，影响设计师SDK的使用。
+	5.[SDK使用]：添加TAE SDK 2.0.0 Popup组件使用说明.docx到文档目录（docs)。
+	6.[SDK工具]：增加宝贝选择器参数表单渲染的条件，模块参数param元素属性必须为：ptype="item" formType="itemForm" 。否则，宝贝选择不会出现，且收到提示信息！
+	7.[SDK工具]：增加分类选择器参数表单渲染的条件，模块参数param元素属性必须为：ptype="category" formType="categoryForm" 。否则，宝贝选择不会出现，且收到提示信息！	8.[SDK工具]：修复formType="range"参数表单渲染：如果所有的option元素中都没有设置selected属性的话，渲染后的控件不会选择任意选项按钮。修复后，默认选择第一个选项。	
+	
+
+	
+
+	
+
+	
+	
+	
+	

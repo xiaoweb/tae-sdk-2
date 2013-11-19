@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="GBK"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         metadata-complete="true" version="2.5">
+
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+            classpath:/META-INF/config/spring/spring-app-service.xml
+        </param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+            classpath:/META-INF/config/spring/spring-app-service.xml
+        </param-value>
+    </context-param>
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <listener>
+        <description>ClassLoader上下文绑定的ServletContextListener</description>
+        <listener-class>com.taobao.commons.web.servlet.listener.ClassLoaderContextBindingServletContextListener
+        </listener-class>
+    </listener>
+
+    <listener>
+        <description>ThreadLocal上下文绑定的ServletRequestListener</description>
+        <listener-class>com.taobao.commons.web.servlet.listener.ThreadLocalContextBindingServletRequestListener
+        </listener-class>
+    </listener>
+
+    <filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>GBK</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>AppRenderServlet</servlet-name>
+        <servlet-class>com.taobao.tae.sdk.app.view.servlet.AppRenderServlet</servlet-class>
+        <init-param>
+            <param-name>static.resource.url.suffix</param-name>
+            <param-value>jpg,jpeg,gif,bmp,png,js,css</param-value>
+        </init-param>
+        <init-param>
+            <param-name>script-encoding</param-name>
+            <param-value>GBK</param-value>
+        </init-param>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AppRenderServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+</web-app>
+
+

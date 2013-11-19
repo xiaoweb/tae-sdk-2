@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<registration_data version="1.0">
+   <environment>
+      <hostname>Mercy-PC</hostname>
+      <hostId/>
+      <osName>Windows 7</osName>
+      <osVersion>6.1</osVersion>
+      <osArchitecture>x86</osArchitecture>
+      <systemModel>To be filled by O.E.M.</systemModel>
+      <systemManufacturer>Gigabyte Technology Co., Ltd.</systemManufacturer>
+      <cpuManufacturer>GenuineIntel</cpuManufacturer>
+      <serialNumber>To be filled by O.E.M.</serialNumber>
+   </environment>
+   <registry urn="urn:st:e5a03c51-3de4-4f44-8dba-568c0857382e" version="1.0">
+      <service_tag>
+         <instance_urn>urn:st:81153fae-8d47-4a1f-bc26-66923243bafd</instance_urn>
+         <product_name>Java SE 7 Development Kit</product_name>
+         <product_version>1.7.0_17</product_version>
+         <product_urn>JSEZ9-007-ZZZZ</product_urn>
+         <product_parent_urn>urn:uuid:dc1704fe-264f-11dc-9482-080020a9ed93</product_parent_urn>
+         <product_parent>Java Platform Standard Edition 7 (Java SE 7)</product_parent>
+         <product_defined_inst_id>id=1.7.0_17-b02 x86,dir=D:\software\dev\Java\jdk1.7.0_17\jre</product_defined_inst_id>
+         <product_vendor>Oracle Corporation</product_vendor>
+         <platform_arch>x86</platform_arch>
+         <timestamp>2013-03-08 11:29:24 GMT</timestamp>
+         <container>global</container>
+         <source>Windows JDK i586 installer</source>
+         <installer_uid>-1</installer_uid>
+      </service_tag>
+   </registry>
+</registration_data>
