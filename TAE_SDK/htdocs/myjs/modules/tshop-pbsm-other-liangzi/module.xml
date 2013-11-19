@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="GBK"?>
+<module>
+    <id>tshop-pbsm-other-liangzi</id>
+    <name>量子恒道-店铺经</name>
+    <thumbnail>http://img02.taobaocdn.com/tps/i2/T1RngFXlNcXXcj5F6l-64-64.gif</thumbnail>
+    <description>[提示：请为系统模块{量子恒道-店铺经}添加描述信息]</description>
+    <themes default="默认">
+        <theme name="默认">
+            <css>assets/stylesheets/default.css</css>
+        </theme>
+    </themes>
+</module>

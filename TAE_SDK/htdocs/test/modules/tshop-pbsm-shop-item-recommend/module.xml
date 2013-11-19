@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="GBK"?>
+<module>
+    <id>tshop-pbsm-shop-item-recommend</id>
+    <name>宝贝推荐</name>
+    <thumbnail>http://img04.taobaocdn.com/tps/i4/T1OZvgXb4fXXcu8V6l-64-64.png</thumbnail>
+    <description xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">[提示：请为系统模块{宝贝推荐}添加描述信息]</description>
+    <themes default="default">
+        <theme name="default">
+            <css>assets/stylesheets/default.css</css>
+        </theme>
+    </themes>
+</module>

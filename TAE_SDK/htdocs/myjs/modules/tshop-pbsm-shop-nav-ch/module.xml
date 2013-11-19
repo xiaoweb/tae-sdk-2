@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="GBK"?>
+<module>
+    <id>tshop-pbsm-shop-nav-ch</id>
+    <name>导航</name>
+    <thumbnail>http://img03.taobaocdn.com/tps/i3/T1XA_dXaFsXXcj5F6l-64-64.gif</thumbnail>
+    <description>[提示：请为系统模块{导航}添加描述信息]</description>
+    <themes default="默认">
+        <theme name="默认">
+            <css>assets/stylesheets/default.css</css>
+        </theme>
+    </themes>
+</module>

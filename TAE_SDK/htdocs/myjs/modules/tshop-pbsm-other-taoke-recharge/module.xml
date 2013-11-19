@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="GBK"?>
+<module>
+    <id>tshop-pbsm-other-taoke-recharge</id>
+    <name>充值中心（淘宝客）</name>
+    <thumbnail>http://img03.taobaocdn.com/tps/i3/T1JQqEXdpnXXXXXXXX-52-52.png</thumbnail>
+    <description>[提示：请为系统模块{充值中心（淘宝客）}添加描述信息]</description>
+    <themes default="默认">
+        <theme name="默认">
+            <css>assets/stylesheets/default.css</css>
+        </theme>
+    </themes>
+</module>

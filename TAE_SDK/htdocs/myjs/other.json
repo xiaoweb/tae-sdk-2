@@ -1,0 +1,10 @@
+{
+  "title" : "自定义页面",
+  "layouts" : [ {
+    "type" : "grid-s5m0",
+    "modules" : {
+      "main" : [ ],
+      "sub" : [ ]
+    }
+  } ]
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="GBK"?>
+<module>
+    <id>tshop-pbsm-shop-srch-inshop</id>
+    <name>搜索店内宝贝</name>
+    <thumbnail>http://img03.taobaocdn.com/tps/i3/T1O4cFXnxdXXcj5F6l-64-64.gif</thumbnail>
+    <description>[提示：请为系统模块{搜索店内宝贝}添加描述信息]</description>
+    <themes default="默认">
+        <theme name="默认">
+            <css>assets/stylesheets/default.css</css>
+        </theme>
+    </themes>
+</module>

@@ -1,0 +1,38 @@
+/**
+ * 模块：tshop-um-myjs 
+ * 皮肤（主题）: 默认
+ * 规则:
+ * 		1. CSS选择器必须包含 ".tshop-um-myjs"，禁止使用模块页面元素的ID选择器
+ *		2. CSS样式声明的position属性值不能使用:fixed
+ *		3. CSS样式文件中z-index属性值必须在1-99之间
+ *		4. CSS URL地址必须是淘宝URL白名单中或者本地（相对或绝对）URL 
+ */
+
+.tshop-um-myjs {color:black;}
+.tshop-um-myJs{
+    width:948px;
+    border:1px solid #ccc;
+    margin-bottom:20px;
+}
+.tshop-um-myJs .hd{
+    border-bottom:1px solid #ccc;
+    height:30px;
+    text-align:center;
+    margin-bottom:20px;
+    line-height:30px;
+    background:#f5f8fc;
+    font-size:14px;
+}
+.tshop-um-myJs .bd button{
+    margin:10px 45%;
+    width:60px;
+}
+.tshop-um-myJs .bd p{
+    color:red;
+    heigth:20px;
+    line-height:20px;
+    width:120px;
+    margin:20px auto;
+}
+
+ 

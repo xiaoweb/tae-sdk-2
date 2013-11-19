@@ -1,0 +1,8 @@
+{
+  "layouts" : [ {
+    "modules" : {
+      "main" : [ ]
+    },
+    "type" : "grid-m"
+  } ]
+}

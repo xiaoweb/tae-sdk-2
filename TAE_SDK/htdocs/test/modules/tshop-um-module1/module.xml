@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="GBK"?>
+<module>
+    <id>tshop-um-module1</id>
+    <name>书籍模块</name>
+    <file>module.php</file>
+    <thumbnail>assets/images/logo.png</thumbnail>
+    <description xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">哦哦哦哦哦哦哦噢噢噢噢</description>
+    <requiredCache>true</requiredCache>
+    <supportedWidth>190,550,750,950</supportedWidth>
+    <themes default="default">
+        <theme name="default">
+            <css>assets/stylesheets/default.css</css>
+        </theme>
+    </themes>
+    <parameters>
+        <group title="书架">
+            <section folded="true" title="社科类">
+                <param ptype="text" name="name" label="书籍" formType="text" description="提示：请输入书籍名称"></param>
+                <param ptype="text" name="type" label="书籍类型" formType="select" description="请选择书籍类型">
+                    <option value="1">长生不老型</option>
+                    <option selected="selected" value="2">快速致富型</option>
+                    <option value="3">成功励志型</option>
+		</param>
+                <param ptype="text" name="label" label="书籍级别" formType="range" description="请选择书籍级别">
+                    <option selected="selected" value="normal">主流</option>
+                    <option value="porn">黄色</option>
+                    <option value="violent">暴力</option>
+                    <option value="reactionary">反动</option>
+			</param>
+                <param ptype="text" name="desc" label="描述内容" formType="textarea" description="书籍描述信息">adasda</param>
+            </section>
+        </group>
+        <group title="选择器组">
+            <section folded="false" title="选择器部分">
+                <param ptype="item" name="item_1" label="宝贝选择器" formType="itemForm" description="描述信息就是要太长！">6,3,2</param>
+                <param ptype="category" name="cate_1" label="分类选择器" formType="categoryForm" description="描述信息就是要太长！"></param>
+            </section>
+        </group>
+        <group title="无Section组">
+            <section folded="false" title="">
+                <param ptype="text" name="desc_2" label="内容" formType="textarea" description="描述信息2">Hello,World</param>
+            </section>
+        </group>
+    </parameters>
+</module>

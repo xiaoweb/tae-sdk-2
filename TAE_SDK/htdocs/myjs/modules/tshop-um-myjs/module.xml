@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="GBK"?>
+<module>
+    <id>tshop-um-myjs</id>
+    <uuid>7363ee8bb3974a728649f4eade168dfc</uuid>
+    <name>js昕庢】旃滌殽</name>
+    <file>tshop-um-myjs.php</file>
+    <thumbnail>../../assets/images/default-thumbnail.png</thumbnail>
+    <description></description>
+    <requiredCache>true</requiredCache>
+    <supportedWidth>990</supportedWidth>
+    <themes default="默认">
+        <theme name="默认">
+            <css>assets/stylesheets/default.css</css>
+        </theme>
+    </themes>
+</module>

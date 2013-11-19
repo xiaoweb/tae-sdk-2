@@ -1,0 +1,13 @@
+{
+  "layouts" : [ {
+    "modules" : {
+      "sub" : [ {
+        "moduleID" : "tshop-um-module2"
+      } ],
+      "main" : [ {
+        "moduleID" : "tshop-um-module1"
+      } ]
+    },
+    "type" : "grid-s5m0"
+  } ]
+}

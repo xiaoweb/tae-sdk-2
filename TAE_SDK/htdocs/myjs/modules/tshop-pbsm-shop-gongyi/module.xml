@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="GBK"?>
+<module>
+    <id>tshop-pbsm-shop-gongyi</id>
+    <name>公益广告联盟</name>
+    <thumbnail>http://img04.taobaocdn.com/tps/i4/T1LSJVXCNXXXbKyk_l-66-66.png</thumbnail>
+    <description>[提示：请为系统模块{公益广告联盟}添加描述信息]</description>
+    <themes default="默认">
+        <theme name="默认">
+            <css>assets/stylesheets/default.css</css>
+        </theme>
+    </themes>
+</module>

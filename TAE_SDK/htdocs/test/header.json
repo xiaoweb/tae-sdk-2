@@ -1,0 +1,10 @@
+{
+  "layouts" : [ {
+    "modules" : {
+      "main" : [ {
+        "moduleID" : "tshop-pbsm-shop-nav-ch"
+      } ]
+    },
+    "type" : "grid-m"
+  } ]
+}

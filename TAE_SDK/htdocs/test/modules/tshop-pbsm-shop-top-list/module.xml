@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="GBK"?>
+<module>
+    <id>tshop-pbsm-shop-top-list</id>
+    <name>宝贝排行榜</name>
+    <thumbnail>http://img03.taobaocdn.com/tps/i3/T1p8bcXmhsXXcj5F6l-64-64.gif</thumbnail>
+    <description xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">[提示：请为系统模块{宝贝排行榜}添加描述信息]</description>
+    <themes default="default">
+        <theme name="default">
+            <css>assets/stylesheets/default.css</css>
+        </theme>
+    </themes>
+</module>

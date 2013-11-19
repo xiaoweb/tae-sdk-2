@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="GBK"?>
+<module>
+    <id>tshop-pbsm-shop-full-self-defined</id>
+    <name>完全自定义内容区</name>
+    <thumbnail>http://img03.taobaocdn.com/tps/i3/T1M4cMXe0gXXcj5F6l-64-64.gif</thumbnail>
+    <description>[提示：请为系统模块{完全自定义内容区}添加描述信息]</description>
+    <themes default="默认">
+        <theme name="默认">
+            <css>assets/stylesheets/default.css</css>
+        </theme>
+    </themes>
+</module>
